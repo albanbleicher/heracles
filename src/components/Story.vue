@@ -162,6 +162,10 @@
           self.modalShown=false;
         }
       })
+      document.querySelector('.close').addEventListener('click', function() {
+        self.modalShown=false;
+        
+      })
       var tableau = document.querySelector('.tableau-img');
       document.addEventListener('mousemove', function(e) {
         mouse.style.left = (e.clientX - 4)+'px' ;

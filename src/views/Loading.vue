@@ -33,7 +33,8 @@ export default {
     progress() {
       var self = this;
       console.log('ok');
-
+      require('@/assets/images/heracles_statue.png')
+      
       var interval = setInterval(function() {
         if(self.progression<11) {
           self.pourcentage = self.pourcentage+9.09;

@@ -155,7 +155,11 @@
     mounted() {
       var self = this;
       var mouse=document.querySelector('.regularCursor');
-      self.currentChapter = parseInt(self.$route.params.chapter)
+      self.currentChapter = parseInt(self.$route.params.chapter);
+      if(!self.histoire[parseInt(self.$route.params.chapter)]) {
+        var chapter=1;
+        self.$router.push({ name: 'story', params: { chapter } })
+      }
       document.addEventListener('keydown', function(e) {
         console.log(e.keyCode);
         if(e.keyCode == 27 && self.modalShown) {
@@ -164,7 +168,7 @@
       })
       document.querySelector('.close').addEventListener('click', function() {
         self.modalShown=false;
-        
+
       })
       var tableau = document.querySelector('.tableau-img');
       document.addEventListener('mousemove', function(e) {
@@ -238,7 +242,7 @@
                   self.$router.push({ name: 'story', params: { chapter } })
                 }
                 else {
-                  self.$router.push({path:'/adventure'})
+                  self.$router.push({path:'/discover'})
 
                 }
               }

@@ -437,6 +437,12 @@ a {
     justify-content: center;
     align-items: center;
     .artData {
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        border-bottom:1px dotted white;
+      }
       width: 50%;
       padding-right: 40px;
       ul {

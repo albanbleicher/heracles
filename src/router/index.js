@@ -5,9 +5,10 @@ import Begin from "../views/Begin.vue";
 import Intro from "../views/Intro.vue";
 import About from "../views/About.vue";
 import Triomphe from "../views/Triomphe.vue";
+import Error from "../views/404.vue";
 import Story from "../components/Story.vue";
 import Labor from "../components/Labor.vue";
-import Adventure from "../components/Adventure.vue";
+import Discover from "../components/Discover.vue";
 
 Vue.use(VueRouter);
 
@@ -33,9 +34,9 @@ const routes = [
     component: Story
   },
   {
-    path: "/adventure",
-    name: "adventure",
-    component: Adventure
+    path: "/discover",
+    name: "discover",
+    component: Discover
   },
   {
     path: "/labor/:step",
@@ -51,6 +52,10 @@ const routes = [
     path: "/triomphe",
     name: "triomphe",
     component: Triomphe
+  },
+  {
+    path: "*",
+    component: Error
   }
 ];
 

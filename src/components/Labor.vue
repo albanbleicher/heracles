@@ -39,6 +39,7 @@
                   <li><i>Date</i> : {{this.labors[this.$route.params.step].tableau.date ? this.labors[this.$route.params.step].tableau.date : 'Inconnue'}}</li>
                   <li><i>Type</i> : {{this.labors[this.$route.params.step].tableau.typeArt ? this.labors[this.$route.params.step].tableau.typeArt : 'Indétereminé'}}</li>
                   <li><i>Lieu de conservation</i> : {{this.labors[this.$route.params.step].tableau.conservation ? this.labors[this.$route.params.step].tableau.conservation :'Inconnu' }} </li>
+                  <li><small><a href="mailto:albanbleicher@outlook.com?subject=H%C3%A9racl%C3%A8s%2C%20le%20webdocumentaire&body=Bonjour%2C%0D%0A%0D%0AJ'aimerai%20signaler%20une%20erreur%20concernant%20une%20information%20pr%C3%A9sente%20sur%20le%20webdocumentaire..." target='_blank'>Signaler une erreur</a> </small> </li>
                 </ul>
               </div>
                 <div class="art">
@@ -307,6 +308,10 @@
     },
     mounted() {
       var self = this;
+      if(!self.labors[parseInt(self.$route.params.step)]) {
+        var step=1;
+        self.$router.push({ name: 'labor', params: { step } })
+      }
       document.title = 'Héraclès - ' + self.labors[self.$route.params.step].nom;
       setTimeout(function(){
         self.animationEnded=true;
